@@ -122,6 +122,10 @@
   #define THERMISTOR_NAME "ATC204GT-2 1K"
 #elif THERMISTOR_ID == 55
   #define THERMISTOR_NAME "ATC104GT-2 1K"
+#elif THERMISTOR_ID == 56
+  #define THERMISTOR_NAME "100k with 4.7k pull-up"
+#elif THERMISTOR_ID == 57
+  #define THERMISTOR_NAME "100k with 4.7k pull-up"
 #elif THERMISTOR_ID == 1047
   #define THERMISTOR_NAME "PT1000 4K7"
 #elif THERMISTOR_ID == 1010

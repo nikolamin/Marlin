@@ -252,7 +252,7 @@ bool DiskIODriver_SPI_SD::init(const uint8_t sckRateID, const pin_t chipSelectPi
   hal.watchdog_refresh(); // In case init takes too long
 
   // Set pin modes
-  #if ENABLED(ZONESTAR_12864OLED)
+  #if EITHER(ZONESTAR_12864OLED,ZONESTAR_12864OLED_SSD1306)
     if (chipSelectPin_ != DOGLCD_CS) {
       SET_OUTPUT(DOGLCD_CS);
       WRITE(DOGLCD_CS, HIGH);

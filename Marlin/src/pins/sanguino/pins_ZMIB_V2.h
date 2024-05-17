@@ -176,7 +176,7 @@
 #ifndef IS_ZMIB_V2
   #define EXP1_05_PIN                          4  // ZMIB V1
 #else
-  #define EXP1_05_PIN                          3  // ZMIB V2
+  #define EXP1_05_PIN                          4  // ZMIB V2
 #endif
 #define EXP1_06_PIN                           12
 #define EXP1_07_PIN                           10
@@ -195,9 +195,9 @@
   #define LCD_PINS_ENABLE            EXP1_05_PIN  // ST7920_DAT_PIN (LCD module pin 5)
   #define LCD_PINS_D4                EXP1_07_PIN  // ST7920_CLK_PIN (LCD module pin 6)
 
-  #define BOARD_ST7920_DELAY_1       DELAY_2_NOP
-  #define BOARD_ST7920_DELAY_2       DELAY_2_NOP
-  #define BOARD_ST7920_DELAY_3       DELAY_2_NOP
+  #define BOARD_ST7920_DELAY_1       125
+  #define BOARD_ST7920_DELAY_2       200
+  #define BOARD_ST7920_DELAY_3       125
 
 #elif EITHER(ZONESTAR_12864OLED, ZONESTAR_12864OLED_SSD1306)
   //
