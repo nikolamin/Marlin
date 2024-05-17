@@ -2523,6 +2523,27 @@ void Stepper::init() {
   // Init Microstepping Pins
   TERN_(HAS_MICROSTEPS, microstep_init());
 
+  #ifdef OPTION_MICROSTEP
+    #if(PIN_EXISTS(MS1) && PIN_EXISTS(MS2))
+      SET_OUTPUT(MS1_PIN);
+      SET_OUTPUT(MS2_PIN);
+	  #if (OPTION_MICROSTEP == 128)
+	    WRITE(MS1_PIN, LOW);
+	    WRITE(MS2_PIN, LOW);
+	  #elif(OPTION_MICROSTEP == 64)
+	    WRITE(MS1_PIN, LOW);
+	    WRITE(MS2_PIN, HIGH);
+	  #elif(OPTION_MICROSTEP == 32)
+	    WRITE(MS1_PIN, HIGH);
+	    WRITE(MS2_PIN, LOW);
+	  #else
+	    WRITE(MS1_PIN, HIGH);
+	    WRITE(MS2_PIN, HIGH);
+	  #endif
+    #else
+      #error "Need Micro step pins MS1 & MS2 when you endabled OPTION_MICROSTEP"  
+    #endif
+  #endif
   // Init Dir Pins
   TERN_(HAS_X_DIR, X_DIR_INIT());
   TERN_(HAS_X2_DIR, X2_DIR_INIT());

@@ -625,6 +625,9 @@
   #if MIXING_STEPPERS == 2
     #define HAS_DUAL_MIXING 1
   #endif
+  #define MIXING_2_IN_1_OUT  (MIXING_STEPPERS == 2)
+  #define MIXING_3_IN_1_OUT  (MIXING_STEPPERS == 3)
+  #define MIXING_4_IN_1_OUT  (MIXING_STEPPERS == 4)
 
 #elif ENABLED(SWITCHING_TOOLHEAD)   // Toolchanger
 
