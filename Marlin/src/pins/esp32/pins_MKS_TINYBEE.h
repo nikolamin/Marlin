@@ -108,8 +108,8 @@
 //
 #define HEATER_0_PIN                         145  // HE0
 #define HEATER_1_PIN                         146  // HE1
-#define FAN0_PIN                             147  // FAN1
-#define FAN1_PIN                             148  // FAN2
+#define FAN0_PIN                             148  // FAN1
+#define FAN1_PIN                             -1  // FAN2
 #define HEATER_BED_PIN                       144  // H-BED
 
 //#define CONTROLLER_FAN_PIN                 148  // FAN2
