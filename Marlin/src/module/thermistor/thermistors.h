@@ -187,6 +187,12 @@ typedef struct { raw_adc_t value; celsius_t celsius; } temp_entry_t;
 #if ANY_THERMISTOR_IS(55)     // beta25 = 4267 K, R25 = 100kΩ, Pullup = 1kΩ, "ATC Semitec 104GT-2 (Used on ParCan)"
   #include "thermistor_55.h"
 #endif
+#if ANY_THERMISTOR_IS(56) // 100K Zonestar thermistor
+  #include "thermistor_56.h"
+#endif
+#if ANY_THERMISTOR_IS(57) // 100K Zonestar thermistor
+  #include "thermistor_57.h"
+#endif
 
 //
 // Analog Thermistors - 10kΩ pullup - Atypical
