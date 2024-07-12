@@ -81,7 +81,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
-#define SERIAL_PORT 0
+#define SERIAL_PORT -1
 
 /**
  * Serial Port Baud Rate
@@ -103,8 +103,8 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
-#define SERIAL_PORT_2 -1
-#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+// #define SERIAL_PORT_2 -1
+// #define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 /**
  * Select a third serial port on the board to use for communication with the host.
@@ -1288,7 +1288,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 405, 450 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 410 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -1328,9 +1328,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          350    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  350    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   350    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -1342,10 +1342,10 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 10.0
-  #define DEFAULT_YJERK 10.0
-  #define DEFAULT_ZJERK  0.3
-  #define DEFAULT_EJERK  5.0
+  #define DEFAULT_XJERK   5.0
+  #define DEFAULT_YJERK   5.0
+  #define DEFAULT_ZJERK    0.3
+  #define DEFAULT_EJERK   5.0
   //#define DEFAULT_IJERK  0.3
   //#define DEFAULT_JJERK  0.3
   //#define DEFAULT_KJERK  0.3
@@ -1882,7 +1882,7 @@
 #define Y_BED_SIZE 220
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS   -20
+#define X_MIN_POS   -24
 #define Y_MIN_POS   -5
 #define Z_MIN_POS    0
 #define X_MAX_POS X_BED_SIZE
